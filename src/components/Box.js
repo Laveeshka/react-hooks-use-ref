@@ -3,10 +3,16 @@ import React, { useRef } from "react";
 function Box() {
   const elementRef = useRef();
 
+  function handleMeasureClick() {
+    const div = elementRef.current; //pulls out the div element on the DOM for access
+    console.log("Measurements: ", div.getBoundingClientRect());
+  }
+
   return (
-    <div ref={elementRef}>
+    //attach the ref to the div with a special `ref` attribute
+    <div ref={elementRef}> 
       <h1>Box</h1>
-      <button>Measure</button>
+      <button onClick={handleMeasureClick}>Measure</button>
     </div>
   );
 }

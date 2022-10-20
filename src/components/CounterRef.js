@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 
 function CounterRef() {
-  const count = useRef(0);
+  const count = useRef(0); //here, `count` is a ref variable which is an object with a single key `current`
 
   function handleClick() {
-    count.current = count.current + 1;
+    count.current = count.current + 1; //updating the ref variable does not cause our component to re-render
     console.log(count.current);
   }
 
